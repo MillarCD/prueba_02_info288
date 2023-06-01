@@ -46,6 +46,7 @@ int max(int *array, int n) {
 int main(int argc, char** argv) {
     int rank, size;
     int n;
+    int array[BUFFER_SIZE];
     int *sub_array;
     int result;
 
@@ -53,9 +54,8 @@ int main(int argc, char** argv) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    int* array = (int*)malloc(BUFFER_SIZE * sizeof(int));
+
     if (rank == 0) {
-        // Proceso 0 obtiene el arreglo desde el archivo
         n = get_array("input.csv", array);
 	if (n%4 != 0) {
 	  printf("Error!!! El largo del vector debe ser multiplo de 4\n");
@@ -108,10 +108,6 @@ int main(int argc, char** argv) {
 
 
     free(sub_array);
-    if (rank == 0) {
-        free(array);
-    }
     MPI_Finalize();
-
     return 0;
 }
