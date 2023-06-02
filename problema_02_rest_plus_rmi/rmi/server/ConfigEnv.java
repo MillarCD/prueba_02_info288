@@ -12,6 +12,7 @@ public class ConfigEnv {
     map = new HashMap<String, String>();
     readFile();
   }
+  // diccionario con los valores del archivo config
   Map<String, String> map;
   static final String FILE = "./config";
   
@@ -32,6 +33,10 @@ public class ConfigEnv {
     writeFile();
   }
 
+  /**
+   * Funcion que lee el archivo config y extrae
+   * las claves y valores para guardarlas en map
+   */
   private void readFile() {
     String key, value;
     
@@ -54,6 +59,11 @@ public class ConfigEnv {
       System.exit(1);
     }
   }
+
+  /**
+   * Escribe en el archivo config, todas las variables y
+   * valores almacenados en map
+   */
   private void writeFile() {
     try {
       FileWriter file = new FileWriter(FILE, false);

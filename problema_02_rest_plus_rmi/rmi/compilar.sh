@@ -8,8 +8,8 @@ javac Server.java
 javac ConfigEnv.java
 
 cp LogRecorder.class ../client
+cp ConfigEnv.class ../client
 
 echo "compilando archivos del cliente"
 cd ../client
 javac Client.java
-javac ConfigEnv.java

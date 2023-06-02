@@ -5,7 +5,7 @@ import requests
 
 import json
 
-IP = '0.0.0.0'
+# Diccionario con direcciones de los esclavos
 data: dict[str, str] = {}
 
 @asynccontextmanager

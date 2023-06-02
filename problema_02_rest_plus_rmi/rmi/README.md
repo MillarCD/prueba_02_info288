@@ -16,7 +16,7 @@ javac Server.java
 javac ConfigEnv.java
 ```
 
-**1.2) copiar archivo LogRecorder.class en la carpeta /client**
+**1.2) copiar los archivos LogRecorder.class y ConfigEnv.class en la carpeta /client**
 
 ```
 cd ../client

@@ -24,6 +24,7 @@ async def lifespan(app: FastAPI):
     DB_PATH = os.getenv("DB_PATH")
     LOG_PATH = os.getenv("LOG_PATH")
     
+    # Extrae los datos del archivo .csv
     df = pd.read_csv(DB_PATH)
 
     ## logging config

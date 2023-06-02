@@ -9,11 +9,11 @@ class Client {
   static public void main(String args[]) {
     ConfigEnv configEnv = ConfigEnv.getInstance();
 
-    String clientName = configEnv.getVar("CLIENT_NAME");
 
+    // Carga variables de entorno
+    String clientName = configEnv.getVar("CLIENT_NAME");
     String LOG_PATH = configEnv.getVar("LOG_PATH");
     int cursor = Integer.parseInt(configEnv.getVar("CURSOR"));
-
     String IP = configEnv.getVar("SERVER_IP");
     int PORT = Integer.parseInt(configEnv.getVar("SERVER_PORT"));
     int TIME_TO_READ = Integer.parseInt(configEnv.getVar("TIME_TO_READ"));
@@ -50,6 +50,7 @@ class Client {
 	  lg.saveLog(clientName, log);
 
 	  cursor++;
+	  // Actualiza el valor de la ultima linea leida en el archivo config
 	  configEnv.setVar("CURSOR", "" + cursor);
 	}
 
