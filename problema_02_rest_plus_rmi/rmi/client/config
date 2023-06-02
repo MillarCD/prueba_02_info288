@@ -1,0 +1,7 @@
+SERVER_IP=127.0.0.1
+SERVER_PORT=3000
+CLIENT_NAME=cliente1
+LOG_PATH=./../../apis_rest/comp
+TIME_TO_READ=5000
+LOG_FILE=computacion.log
+CURSOR=4
